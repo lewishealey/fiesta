@@ -7,7 +7,7 @@ html {
 
 $white: #FFFFFF;
 $lwhite: #B0BEC5;
-$blue: #5DBBFD;
+$blue: #0724CB;
 $lblue: #0B8DFF;
 $orange: #FFA47D;
 $red: #FF7D7D;
@@ -16,11 +16,11 @@ $mfade: #8B9299;
 $lfade: #F2F5F5;
 $yellow: #FFE030;
 $dark: #233332;
-$gold: #D5BF8C;
+$gold: #E2A35B;
 $rose: #FDCDD3;
-$success: #19B26B;
+$success: #22D66C;
 
-$primary: #FF410D;
+$primary: #0724CB;
 
 $phone-width: 320px;
 $tablet-width: 768px;
@@ -44,8 +44,62 @@ $desktop-width: 1024px;
   }
 }
 
+@font-face {
+    font-family: 'brandon_grotesquemedium';
+    src: url('fonts/brandon_med-webfont.woff2') format('woff2'),
+         url('fonts/brandon_med-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'brandon_grotesquethin';
+    src: url('fonts/brandon_thin-webfont.woff2') format('woff2'),
+         url('fonts/brandon_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'brandon_grotesque_regularRg';
+    src: url('fonts/brandon_reg-webfont.woff2') format('woff2'),
+         url('fonts/brandon_reg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'brandon_grotesquelight';
+    src: url('fonts/brandon_light-webfont.woff2') format('woff2'),
+         url('fonts/brandon_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'brandon_grotesqueblack';
+    src: url('fonts/brandon_blk-webfont.woff2') format('woff2'),
+         url('fonts/brandon_blk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'brandon_grotesquebold';
+    src: url('fonts/brandon_bld-webfont.woff2') format('woff2'),
+         url('fonts/brandon_bld-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'brandon_grotesquemedium', sans-serif;
 	-webkit-font-smoothing: antialiased;
   color: $mfade;
   background: $fade;
@@ -133,12 +187,12 @@ h4 {
 
 
 .header {
-  position: absolute;
+  position: relative;
   z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
-  height: 680px;
+  height: 100vh;
   padding: 30px 0 0 0;
   overflow: hidden;
   background: url("img/bg3.jpg") top left no-repeat;
@@ -166,7 +220,7 @@ h4 {
   &__sub {
     color: white;
     font-size: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 
   &__info {
@@ -188,6 +242,11 @@ h4 {
 
   }
 
+  &__rule {
+    margin: 30px auto;
+    max-width: 65px;
+  }
+
   &__signup {
     margin-bottom: 30px;
   }
@@ -196,13 +255,19 @@ h4 {
     width: 100%;
   }
 
+  &__swish {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+  }
+
 }
 
 .section {
-  position: absolute;
-  top: 680px;
+  position: relative;
   width: 100%;
-  background: $white;
+  background: $fade;
   padding: 60px 0;
 
   @include phone {
@@ -212,12 +277,19 @@ h4 {
 
   &__title {
     margin-top: 0px;
-    margin-bottom: 60px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: $primary;
 
     @include phone {
       margin-bottom: 30px;
     }
 
+  }
+
+  &__copy {
+    font-size: 18px;
+    margin-bottom: 60px;
   }
 
   &__follow {
@@ -251,18 +323,23 @@ h4 {
 }
 
 .footer {
-  background: #F2F5F5 url("img/pattern.png");
   padding: 60px 0;
 
   @include phone {
     padding: 30px 0;
   }
 
+  h1 {
+    color: #FF410D;
+    font-size: 40px;
+  }
+
 }
 
 .copyright {
   padding: 30px 0;
-  color: #C6CED6;
+  color: #8B9299;
+  font-size: 16px;
 }
 
 .badge {
@@ -326,7 +403,8 @@ label {
 	box-shadow: none;
 	border-radius: 5px;
   min-width: 350px;
-  height: 40px;
+  min-height: 56px;
+  font-size: 16px;
 
   &.success {
     border-color: $success;
@@ -339,24 +417,35 @@ label {
 }
 
 .card {
-  padding: 15px;
+  padding: 30px;
   border-radius: 4px;
   border: 2px solid #D2DCE6;
   margin-bottom: 30px;
-  min-height: 190px;
+  min-height: 230px;
   @include animation(all,0.5s,linear);
+  font-size: 16px;
+  line-height: 1.44;
+  color: #243238;
+
+  &--purple {
+
+    &:hover {
+      border: 2px solid #722FF5;
+    }
+
+  }
 
   @include phone {
     margin-bottom: 15px;
   }
 
   &:hover {
-    border: 2px solid $gold;
+    border: 2px solid $primary;
   }
 
   h4 {
-    font-size: 18px;
-    color: $gold;
+    font-size: 20px;
+    color: $primary;
     margin-top: 10px;
     margin-bottom: 15px;
   }
@@ -415,6 +504,16 @@ label {
 
 	}
 
+  &--naked {
+    background-color: transparent;
+    border-color: white;
+
+    &:hover {
+      background-color: #0724CB;
+      color: white;
+    }
+  }
+
 	&--choice {
 		border-color: #F2F5F5;
 		background-color: #F2F5F5;
@@ -444,6 +543,12 @@ label {
 			color: $white;
 		}
 	}
+
+  &--success {
+    background-color: $success;
+    border-color: $success;
+    color: $white;
+  }
 
   &--primary {
     background-color: $primary;

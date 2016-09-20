@@ -4,8 +4,44 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+@font-face {
+  font-family: 'brandon_grotesquemedium';
+  src: url("fonts/brandon_med-webfont.woff2") format("woff2"), url("fonts/brandon_med-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'brandon_grotesquethin';
+  src: url("fonts/brandon_thin-webfont.woff2") format("woff2"), url("fonts/brandon_thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'brandon_grotesque_regularRg';
+  src: url("fonts/brandon_reg-webfont.woff2") format("woff2"), url("fonts/brandon_reg-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'brandon_grotesquelight';
+  src: url("fonts/brandon_light-webfont.woff2") format("woff2"), url("fonts/brandon_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'brandon_grotesqueblack';
+  src: url("fonts/brandon_blk-webfont.woff2") format("woff2"), url("fonts/brandon_blk-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'brandon_grotesquebold';
+  src: url("fonts/brandon_bld-webfont.woff2") format("woff2"), url("fonts/brandon_bld-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'brandon_grotesquemedium', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #8B9299;
   background: #F2F5F5; }
@@ -37,12 +73,12 @@ h4 {
   color: #8B9299; }
 
 .blue {
-  color: #5DBBFD; }
+  color: #0724CB; }
 
 .count {
   margin-right: 10px; }
   .count--blue {
-    color: #5DBBFD; }
+    color: #0724CB; }
 
 .tal {
   text-align: left; }
@@ -65,12 +101,12 @@ h4 {
       height: 490px; } }
 
 .header {
-  position: absolute;
+  position: relative;
   z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
-  height: 680px;
+  height: 100vh;
   padding: 30px 0 0 0;
   overflow: hidden;
   background: url("img/bg3.jpg") top left no-repeat; }
@@ -90,7 +126,7 @@ h4 {
   .header__sub {
     color: white;
     font-size: 22px;
-    margin-bottom: 30px; }
+    margin-bottom: 0; }
   .header__info {
     margin-bottom: 30px;
     color: #8B9299;
@@ -102,16 +138,23 @@ h4 {
       color: #8B9299; }
       .header__info a:hover {
         color: #FDCDD3; }
+  .header__rule {
+    margin: 30px auto;
+    max-width: 65px; }
   .header__signup {
     margin-bottom: 30px; }
   .header__screenshot {
     width: 100%; }
+  .header__swish {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%; }
 
 .section {
-  position: absolute;
-  top: 680px;
+  position: relative;
   width: 100%;
-  background: #FFFFFF;
+  background: #F2F5F5;
   padding: 60px 0; }
   @media (min-width: 320px) and (max-width: 767px) {
     .section {
@@ -119,10 +162,15 @@ h4 {
       padding: 30px 0; } }
   .section__title {
     margin-top: 0px;
-    margin-bottom: 60px; }
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: #0724CB; }
     @media (min-width: 320px) and (max-width: 767px) {
       .section__title {
         margin-bottom: 30px; } }
+  .section__copy {
+    font-size: 18px;
+    margin-bottom: 60px; }
   .section__follow {
     line-height: 1;
     margin: 60px 0; }
@@ -140,15 +188,18 @@ h4 {
       color: #233332; }
 
 .footer {
-  background: #F2F5F5 url("img/pattern.png");
   padding: 60px 0; }
   @media (min-width: 320px) and (max-width: 767px) {
     .footer {
       padding: 30px 0; } }
+  .footer h1 {
+    color: #FF410D;
+    font-size: 40px; }
 
 .copyright {
   padding: 30px 0;
-  color: #C6CED6; }
+  color: #8B9299;
+  font-size: 16px; }
 
 .badge {
   display: inline-block;
@@ -161,13 +212,13 @@ h4 {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #5DBBFD;
+  background-color: #0724CB;
   border-radius: 10px; }
   .badge--outline {
     background-color: transparent; }
   .badge--blue {
-    color: #5DBBFD;
-    border: 1px solid #5DBBFD; }
+    color: #0724CB;
+    border: 1px solid #0724CB; }
   .badge--large {
     font-weight: 500;
     font-size: 24px;
@@ -194,30 +245,36 @@ label {
   box-shadow: none;
   border-radius: 5px;
   min-width: 350px;
-  height: 40px; }
+  min-height: 56px;
+  font-size: 16px; }
   .form-control.success {
-    border-color: #19B26B; }
+    border-color: #22D66C; }
   .form-control.error {
     border-color: #FDCDD3; }
 
 .card {
-  padding: 15px;
+  padding: 30px;
   border-radius: 4px;
   border: 2px solid #D2DCE6;
   margin-bottom: 30px;
-  min-height: 190px;
+  min-height: 230px;
   webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
-  transition: all 0.5s linear; }
+  transition: all 0.5s linear;
+  font-size: 16px;
+  line-height: 1.44;
+  color: #243238; }
+  .card--purple:hover {
+    border: 2px solid #722FF5; }
   @media (min-width: 320px) and (max-width: 767px) {
     .card {
       margin-bottom: 15px; } }
   .card:hover {
-    border: 2px solid #D5BF8C; }
+    border: 2px solid #0724CB; }
   .card h4 {
-    font-size: 18px;
-    color: #D5BF8C;
+    font-size: 20px;
+    color: #0724CB;
     margin-top: 10px;
     margin-bottom: 15px; }
 
@@ -241,8 +298,8 @@ label {
     border-color: #233332;
     color: #FFFFFF; }
   .btn:hover {
-    background-color: #5DBBFD;
-    border-color: #5DBBFD;
+    background-color: #0724CB;
+    border-color: #0724CB;
     color: #233332; }
   .btn:focus {
     outline: none; }
@@ -256,6 +313,12 @@ label {
     content: inherit;
     font-size: 20px;
     line-height: 1; }
+  .btn--naked {
+    background-color: transparent;
+    border-color: white; }
+    .btn--naked:hover {
+      background-color: #0724CB;
+      color: white; }
   .btn--choice {
     border-color: #F2F5F5;
     background-color: #F2F5F5;
@@ -276,24 +339,28 @@ label {
       color: #FFFFFF; }
     .btn--invite:focus {
       color: #FFFFFF; }
+  .btn--success {
+    background-color: #22D66C;
+    border-color: #22D66C;
+    color: #FFFFFF; }
   .btn--primary {
-    background-color: #FF410D;
-    border-color: #FF410D;
+    background-color: #0724CB;
+    border-color: #0724CB;
     color: #FFFFFF; }
   .btn--gold {
-    background-color: #D5BF8C;
-    border-color: #D5BF8C;
+    background-color: #E2A35B;
+    border-color: #E2A35B;
     color: #FFFFFF; }
     .btn--gold:hover {
       background-color: #233332;
       border-color: #233332;
       color: #FFFFFF; }
   .btn--gold-o {
-    border-color: #D5BF8C;
-    color: #D5BF8C; }
+    border-color: #E2A35B;
+    color: #E2A35B; }
     .btn--gold-o:hover {
-      background-color: #D5BF8C;
-      border-color: #D5BF8C;
+      background-color: #E2A35B;
+      border-color: #E2A35B;
       color: #FFFFFF; }
   .btn--rose-o {
     border-color: #FDCDD3;
