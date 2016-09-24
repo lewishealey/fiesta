@@ -9,20 +9,19 @@ $(document).ready(function($){
 
     $(this).text("Loading");
 
-    console.log("hello")
-
     if(email) {
       console.log("Is email");
 
       $.ajax({
         method: "POST",
-        url: "mail.php",
+        url: "mailchimp.php",
         data: { email: value }
       })
       .done(function( response ) {
         // json = JSON.parse(response);
         // console.log(json);
         console.log(response);
+        $(this).text("Sign up");
 
       });
 

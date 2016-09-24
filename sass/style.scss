@@ -198,12 +198,18 @@ h4 {
   background: url("img/bg3.jpg") top left no-repeat;
 
   @include phone {
-    height: 490px;
+    height: 70vh;
   }
 
   &__logo {
     margin: 30px 0;
     max-width: 120px;
+
+    @include phone {
+      margin: 0 0 20px 25px;
+      max-width: 100px;
+    }
+
   }
 
   &__title {
@@ -212,7 +218,7 @@ h4 {
     color: white;
 
     @include phone {
-      font-size: 20px;
+      font-size: 24px;
     }
 
   }
@@ -221,6 +227,12 @@ h4 {
     color: white;
     font-size: 22px;
     margin-bottom: 0;
+    line-height: 1.6;
+
+    @include phone {
+      font-size: 18px;
+    }
+
   }
 
   &__info {
@@ -245,6 +257,11 @@ h4 {
   &__rule {
     margin: 30px auto;
     max-width: 65px;
+
+    @include phone {
+      max-width: 40px;
+    }
+
   }
 
   &__signup {
@@ -271,7 +288,6 @@ h4 {
   padding: 60px 0;
 
   @include phone {
-    top: 490px;
     padding: 30px 0;
   }
 
@@ -282,7 +298,8 @@ h4 {
     color: $primary;
 
     @include phone {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      font-size: 24px;
     }
 
   }
@@ -290,6 +307,12 @@ h4 {
   &__copy {
     font-size: 18px;
     margin-bottom: 60px;
+    color: $dark;
+
+    @include phone {
+      margin: 0 0 30px 0;
+    }
+
   }
 
   &__follow {
@@ -302,6 +325,7 @@ h4 {
 
     span {
       margin-right: 30px;
+      display: inline-block;
 
       &:last-child{
         margin-right: 0px;
@@ -322,6 +346,21 @@ h4 {
 
 }
 
+.notify {
+
+  h1 {
+    color: #FF410D;
+    font-size: 40px;
+    margin-top: 0;
+
+    @include phone {
+      font-size: 24px;
+    }
+
+  }
+
+}
+
 .footer {
   padding: 60px 0;
 
@@ -332,6 +371,12 @@ h4 {
   h1 {
     color: #FF410D;
     font-size: 40px;
+    margin-top: 0;
+
+    @include phone {
+      font-size: 24px;
+    }
+
   }
 
 }
@@ -437,6 +482,12 @@ label {
 
   @include phone {
     margin-bottom: 15px;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  @include tablet {
+    min-height: 260px;
   }
 
   &:hover {
@@ -446,7 +497,7 @@ label {
   h4 {
     font-size: 20px;
     color: $primary;
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 15px;
   }
 
@@ -506,9 +557,8 @@ label {
 
   &--naked {
     background-color: transparent;
-    border-color: white;
 
-    &:hover {
+    &:hover, &:focus, &:selected {
       background-color: #0724CB;
       color: white;
     }
@@ -548,12 +598,26 @@ label {
     background-color: $success;
     border-color: $success;
     color: $white;
+
+    &:hover {
+      background-color: darken($success,10%);
+      border-color: darken($success,10%);
+      color: $white;
+    }
+
   }
 
   &--primary {
     background-color: $primary;
     border-color: $primary;
     color: $white;
+
+    &:hover, &:focus {
+      background-color: darken($primary,10%);
+      border-color: darken($primary,10%);
+      color: $white;
+    }
+
   }
 
 	&--gold {

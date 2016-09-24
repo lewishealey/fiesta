@@ -112,21 +112,29 @@ h4 {
   background: url("img/bg3.jpg") top left no-repeat; }
   @media (min-width: 320px) and (max-width: 767px) {
     .header {
-      height: 490px; } }
+      height: 70vh; } }
   .header__logo {
     margin: 30px 0;
     max-width: 120px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .header__logo {
+        margin: 0 0 20px 25px;
+        max-width: 100px; } }
   .header__title {
     margin: 0;
     font-size: 40px;
     color: white; }
     @media (min-width: 320px) and (max-width: 767px) {
       .header__title {
-        font-size: 20px; } }
+        font-size: 24px; } }
   .header__sub {
     color: white;
     font-size: 22px;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    line-height: 1.6; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .header__sub {
+        font-size: 18px; } }
   .header__info {
     margin-bottom: 30px;
     color: #8B9299;
@@ -141,6 +149,9 @@ h4 {
   .header__rule {
     margin: 30px auto;
     max-width: 65px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .header__rule {
+        max-width: 40px; } }
   .header__signup {
     margin-bottom: 30px; }
   .header__screenshot {
@@ -158,7 +169,6 @@ h4 {
   padding: 60px 0; }
   @media (min-width: 320px) and (max-width: 767px) {
     .section {
-      top: 490px;
       padding: 30px 0; } }
   .section__title {
     margin-top: 0px;
@@ -167,10 +177,15 @@ h4 {
     color: #0724CB; }
     @media (min-width: 320px) and (max-width: 767px) {
       .section__title {
-        margin-bottom: 30px; } }
+        margin-bottom: 15px;
+        font-size: 24px; } }
   .section__copy {
     font-size: 18px;
-    margin-bottom: 60px; }
+    margin-bottom: 60px;
+    color: #233332; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .section__copy {
+        margin: 0 0 30px 0; } }
   .section__follow {
     line-height: 1;
     margin: 60px 0; }
@@ -178,7 +193,8 @@ h4 {
       .section__follow {
         margin: 30px 0; } }
     .section__follow span {
-      margin-right: 30px; }
+      margin-right: 30px;
+      display: inline-block; }
       .section__follow span:last-child {
         margin-right: 0px; }
     .section__follow img {
@@ -187,6 +203,14 @@ h4 {
       font-size: 20px;
       color: #233332; }
 
+.notify h1 {
+  color: #FF410D;
+  font-size: 40px;
+  margin-top: 0; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .notify h1 {
+      font-size: 24px; } }
+
 .footer {
   padding: 60px 0; }
   @media (min-width: 320px) and (max-width: 767px) {
@@ -194,7 +218,11 @@ h4 {
       padding: 30px 0; } }
   .footer h1 {
     color: #FF410D;
-    font-size: 40px; }
+    font-size: 40px;
+    margin-top: 0; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .footer h1 {
+        font-size: 24px; } }
 
 .copyright {
   padding: 30px 0;
@@ -269,13 +297,18 @@ label {
     border: 2px solid #722FF5; }
   @media (min-width: 320px) and (max-width: 767px) {
     .card {
-      margin-bottom: 15px; } }
+      margin-bottom: 15px;
+      padding: 20px;
+      min-height: auto; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .card {
+      min-height: 260px; } }
   .card:hover {
     border: 2px solid #0724CB; }
   .card h4 {
     font-size: 20px;
     color: #0724CB;
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 15px; }
 
 .btn {
@@ -314,9 +347,8 @@ label {
     font-size: 20px;
     line-height: 1; }
   .btn--naked {
-    background-color: transparent;
-    border-color: white; }
-    .btn--naked:hover {
+    background-color: transparent; }
+    .btn--naked:hover, .btn--naked:focus, .btn--naked:selected {
       background-color: #0724CB;
       color: white; }
   .btn--choice {
@@ -343,10 +375,18 @@ label {
     background-color: #22D66C;
     border-color: #22D66C;
     color: #FFFFFF; }
+    .btn--success:hover {
+      background-color: #1baa56;
+      border-color: #1baa56;
+      color: #FFFFFF; }
   .btn--primary {
     background-color: #0724CB;
     border-color: #0724CB;
     color: #FFFFFF; }
+    .btn--primary:hover, .btn--primary:focus {
+      background-color: #051b9a;
+      border-color: #051b9a;
+      color: #FFFFFF; }
   .btn--gold {
     background-color: #E2A35B;
     border-color: #E2A35B;
